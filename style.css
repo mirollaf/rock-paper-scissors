@@ -25,8 +25,10 @@ body {
 }
 
 h1 {
-  font-size: 60px;
+  font-size: 80px;
   margin: 1vh 0;
+  color: #ffffff;
+  
 }
 
 h5 {
@@ -58,8 +60,6 @@ hr {
 
 .select-choice {
   display: inline-block;
-  border: 5px solid #ffffff;
-  border-radius: 80px;
   margin: 1rem;
   transition: all 0.6s ease;
 }
@@ -113,4 +113,10 @@ footer {
 .fab {
   color: #862626;
   margin: 0 .5%;
+}
+
+
+#rock {
+  height: 160px;
+  width: 110px;
 }
