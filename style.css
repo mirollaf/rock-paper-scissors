@@ -1,122 +1,93 @@
-@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
-
-html{
-  height: 100%;
-}
-
 body {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  font-size: 2;
-  background-image: linear-gradient(180deg , #204d5f, #212149);
-}
-
-#sofia {
-  font-family: Sofia;
-}
-
-#inside {
-  margin: auto;
-  width: 45%;
-  height: 50%;
-  border-radius: 25px;
+  background-color: #2600ff !important;
  
-}
 
-h1 {
-  font-size: 80px;
-  margin: 1vh 0;
-  color: #ffffff;
-  
-}
-
-h5 {
-  font-family: Sofia;
+  font-family: 'Arial', sans-serif;
 
 }
 
-p {
-  color: #f6f8f8;
+
+
+
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-hr {
-  width: 30px;
+#COMPUTERBG {
+  background-color: #94AF9F;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-#instruction {
-  font-size: 1.5rem;
-  margin-bottom: 0;
+#rpng {
+  width: 200px;
+  height: 200px;
 }
-
-.img-weapon {
-  max-width: 120px;
-  height: auto
+#ppng {
+  width: 200px;
+  height: 200px;
 }
-
-.choice {
-  margin: auto;
-}
-
-.select-choice {
-  display: inline-block;
-  margin: 1rem;
-  transition: all 0.6s ease;
-}
-
-
-
-.result {
-  font-size: 30px;
-  font-weight: 600;
+#spng {
+  width: 200px;
+  height: 200px;
 }
 
 
-.scores {
-  background-color: #000000;
-  border-radius: 25px;
-  opacity:0.5;
-  border: 1px groove black;
+#scissors {
+  border: none;
+cursor: pointer;
+border: none;
+background-color: transparent;
+height: 210px;
+width: 220px;
 }
 
-.scores>p {
-  color: #FFFFFF;
-  font-size: 1.7rem;
-  font-weight: 600;
-  padding: 0.5rem;
-  margin: 0;
+#paper {
+  border: none;
+cursor: pointer;
+background-color: transparent;
+height: 210px;
+width: 220px;
 }
-
-#reset-button {
-  border-radius: 40px;
-  display: inline-block;
-  cursor: pointer;
-  color: #000000;
-  font-size:12;
-  font-weight: 600;
-  text-decoration: none;
-  margin: 20;
-  outline: none;
-}
-
-#reset-button:active {
-  position: relative;
-  top: 1px;
-}
-
-footer {
-  font-size: 0.7rem;
-  line-height: 0.3rem;
-  padding-top: 2vh;
-}
-
-.fab {
-  color: #862626;
-  margin: 0 .5%;
-}
-
 
 #rock {
-  height: 160px;
-  width: 110px;
+  border: none;
+cursor: pointer;
+background-color: transparent;
+height: 210px;
+width: 220px;
+}
+
+
+
+
+/* MADLIB CSS */
+
+
+#madlib {
+  width: 90%;
+  height: 15%;
+  margin: 0 auto;
+}
+
+.mirolla {
+  color: #ffffff;
+  padding: 10px 0;
+  text-align: center;
+  width: 90%;
+  font-family: 'Rubik Doodle Shadow', system-ui;
+}
+
+
+#madLibOutput {
+  text-align: center;
+
+}
+
+#scoreboard {
+  text-align: center;
 }
