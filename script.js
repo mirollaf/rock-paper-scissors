@@ -1,7 +1,8 @@
-ONLY THINGS LEFT TO DO:
-1) Center buttons
-2) reset button wont reset
-3) make it stop bets out of 5
+// ONLY THINGS LEFT TO DO:
+// 1) Center buttons
+// 2) reset button wont reset
+// 3) make it stop bets out of 5
+
 
 
 
