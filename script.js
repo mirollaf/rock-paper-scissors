@@ -1,18 +1,3 @@
-// ONLY THINGS LEFT TO DO:
-// 1) Center buttons
-// 2) reset button wont reset
-// 3) make it stop bets out of 5
-
-
-
-
-
-
-
-
-
-
-
 
 // ID select
 var r = document.getElementById('rock'),
@@ -97,8 +82,6 @@ function index(n, u, b, s) {
 
   document.getElementById('deleteButton').addEventListener('click', function() {
     document.getElementById('notif').innerHTML = ""
-    //document.getElementById("b").removeChild(document.getElementById('notif'))
-    //document.getElementById("b").appendChild(document.createElement('div')).id = "notif"
   })
 }
 
