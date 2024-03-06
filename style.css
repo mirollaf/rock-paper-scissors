@@ -14,6 +14,9 @@ img {
   margin-right: auto;
 }
 
+h1{ 
+  font-size: 70px;
+}
 
 #rpng {
   width: 170px;
@@ -79,6 +82,7 @@ width: 220px;
 
 #scoreboard {
   text-align: center;
-  color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255); 
+  font-size: 30px;
 }
 

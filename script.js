@@ -1,4 +1,8 @@
 
+<<<<<<< HEAD
+=======
+// ID select
+>>>>>>> 1a673c570fb2a5f39a18adcd47cc273e77403c2d
 var r = document.getElementById('rock'),
     p = document.getElementById('paper'),
     s = document.getElementById('scissors'),
@@ -71,8 +75,13 @@ function index(message, userChoice, botChoice, styleClass) {
   </div>`;
 
   document.getElementById('deleteButton').addEventListener('click', function() {
+<<<<<<< HEAD
     resetGame();
   });
+=======
+    document.getElementById('notif').innerHTML = ""
+  })
+>>>>>>> 1a673c570fb2a5f39a18adcd47cc273e77403c2d
 }
 
 function resetGame() {
