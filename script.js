@@ -1,120 +1,86 @@
-// ONLY THINGS LEFT TO DO:
-// 1) Center buttons
-// 2) reset button wont reset
-// 3) make it stop bets out of 5
 
-
-
-
-
-
-
-
-
-
-
-
-// ID select
 var r = document.getElementById('rock'),
     p = document.getElementById('paper'),
     s = document.getElementById('scissors'),
-    u = document.getElementById('u'),
-    b = document.getElementById('bot');
+    userScoreDisplay = document.getElementById('user-score'),
+    botScoreDisplay = document.getElementById('bot-score');
 
+var rps = ["rock", "paper", "scissors"];
+var emoji = { rock: '✊️', paper: '🖐️', scissors: '✌️' };
 
-var rps = ["rock", "paper", "scissors"]
-var emoji = { rock: '✊️', paper: '🖐️', scissors: '✌️' }
-
+var userScore = 0;
+var botScore = 0;
+var scoreLimit = 5;
 
 r.addEventListener('click', function() {
-  const random = rps[Math.floor(Math.random() * rps.length)]
-
-
-  check('rock', random)
-})
-
+  if (userScore < scoreLimit && botScore < scoreLimit) {
+    playGame('rock');
+  }
+});
 
 p.addEventListener('click', function() {
-  const random = rps[Math.floor(Math.random() * rps.length)]
-
-
-  check('paper', random)
-})
-
+  if (userScore < scoreLimit && botScore < scoreLimit) {
+    playGame('paper');
+  }
+});
 
 s.addEventListener('click', function() {
-  const random = rps[Math.floor(Math.random() * rps.length)]
+  if (userScore < scoreLimit && botScore < scoreLimit) {
+    playGame('scissors');
+  }
+});
 
+function playGame(userChoice) {
+  var botChoice = rps[Math.floor(Math.random() * rps.length)];
+  check(userChoice, botChoice);
+}
 
-  check('scissors', random)
-})
+function check(userChoice, botChoice) {
+  if (userChoice === botChoice) {
+    index('Tie!', userChoice, botChoice, 'is-warning');
+  } else if (
+    (userChoice === 'rock' && botChoice === 'scissors') ||
+    (userChoice === 'paper' && botChoice === 'rock') ||
+    (userChoice === 'scissors' && botChoice === 'paper')
+  ) {
+    index('You Win!', userChoice, botChoice, 'is-primary');
+    userScore++;
+  } else {
+    index('You Lose!', userChoice, botChoice, 'is-danger');
+    botScore++;
+  }
 
+  userScoreDisplay.textContent = userScore;
+  botScoreDisplay.textContent = botScore;
 
-function check(u, b) {
-  if(u == "rock" && b == "rock") {
-    index('Tie!', u, b, 'is-warning')
-    score(false, false)
-  } else if(u == "rock" && b == "paper") {
-    index('You Lose!', u, b, 'is-danger')
-    score(false, true)
-  } else if(u == "rock" && b == "scissors") {
-    index('You Win!', u, b, 'is-primary')
-    score(true, false)
-  } else if(u == "paper" && b == "paper") {
-    index('Tie!', u, b, 'is-warning')
-    score(false, false)
-  } else if(u == "paper" && b == "scissors") {
-    index('You Lose!', u, b, 'is-danger')
-    score(false, true)
-  } else if(u == "paper" && b == "rock") {
-    index('You Win!', u, b, 'is-primary')
-    score(true, false)
-  } else if(u == "scissors" && b == "scissors") {
-    index('Tie!', u, b, 'is-warning')
-    score(false, false)
-  } else if(u == "scissors" && b == "rock") {
-    index('You Lose!', u, b, 'is-danger')
-    score(false, true)
-  } else if(u == "scissors" && b == "paper") {
-    index('You Win!', u, b, 'is-primary')
-    score(true, false)
+  if (userScore === scoreLimit || botScore === scoreLimit) {
+    alert('Game over! Reset to play again.');
   }
 }
 
-
-function index(n, u, b, s) {
-  document.getElementById("notif").innerHTML = `<div class="notification ${s} is-light" id="notif">
+function index(message, userChoice, botChoice, styleClass) {
+  document.getElementById('notif').innerHTML = `<div class="notification ${styleClass} is-light" id="notif">
     <button class="delete" id="deleteButton">Reset</button>
-    You choose: <span id="u">${u + " " + emoji[u]}</span>
+    You choose: <span id="u">${userChoice + ' ' + emoji[userChoice]}</span>
     <br />
-    Computer choose: <span id="bot">${b + " " + emoji[b]}</span>
+    Computer choose: <span id="bot">${botChoice + ' ' + emoji[botChoice]}</span>
     <br />
     <p class="has-text-centered">
-      <span id="state" class="has-text-weight-bold">${n}</span>
+      <span id="state" class="has-text-weight-bold">${message}</span>
     </p>
-  </div>`
-
+  </div>`;
 
   document.getElementById('deleteButton').addEventListener('click', function() {
-    document.getElementById('notif').innerHTML = ""
-    //document.getElementById("b").removeChild(document.getElementById('notif'))
-    //document.getElementById("b").appendChild(document.createElement('div')).id = "notif"
-  })
+    resetGame();
+  });
 }
 
-
-function score(u, b) {
-  var user = document.getElementById('user-score'),
-      bot = document.getElementById('bot-score');
-
-
-  if(u) {
-    var s = Number(user.textContent) + 1;
-    user.innerHTML = s
-  } else if(b) {
-    var s = Number(bot.textContent) + 1;
-    bot.innerHTML = s
-  }
+function resetGame() {
+  userScore = 0;
+  botScore = 0;
+  userScoreDisplay.textContent = '0';
+  botScoreDisplay.textContent = '0';
+  document.getElementById('notif').innerHTML = '';
 }
 
 
